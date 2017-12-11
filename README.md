@@ -20,8 +20,8 @@ Install with [npm](http://npmjs.org/):
 Git clone:
 
 ```
-    $ git clone https://gitlab.com/Xcdify/angular-node.git
-    $ git checkout jiraAPI
+    $ git clone https://github.com/avjabalpur/node-angular-mongo.git
+    $ git checkout node-angular-mongo
 ```
 
 Install npm and bower:
