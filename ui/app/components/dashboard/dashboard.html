@@ -1,0 +1,13 @@
+<div class="dashboard">
+    <input ng-model="dataToSend">
+    <button ng-click="emitBasic()">Send</button>
+    <button ng-click="emitACK()">Send (ACK)</button>
+    <div>Server Response: {{ serverResponse }}</div>
+    <div>Server Response (ACK): {{ serverResponseACK }}</div>
+
+<div>
+    {{notifications}}
+</div>
+
+</div>
+

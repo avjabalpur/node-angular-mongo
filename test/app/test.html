@@ -1,0 +1,24 @@
+<div>
+    <div ng-hide="vm.IsLoggedin">
+        <form ng-submit="vm.login()">
+            <label>User name</label>
+            <input type="text" name="username" value="" ng-model="vm.logindata.username">
+            <label>Password</label>
+            <input type="text" name="password" value="" ng-model="vm.logindata.password">
+            <label>remember Me</label>
+            <input type="checkbox" name="rememberMe" value="" ng-model="vm.logindata.rememberMe">
+            <input type="submit" name="submit" />
+        </form>
+    </div>
+    <a href="/success">success redirect</a>
+
+    <div ng-show="vm.IsLoggedin">
+        {{vm.data.data}}
+    </div>
+    <!-- <div ng-show="vm.IsLoggedin">
+        <input type="button" name="submit" value="load" ng-click="vm.loadJiraUsers()" /> {{vm.jirausers}}
+    </div> -->
+     <div ng-show="vm.IsLoggedin">
+        <input type="button" name="jiraConnect" value="jiraConnect" ng-click="vm.jiraConnect()" /> {{vm.jirausers}}
+    </div>
+</div>

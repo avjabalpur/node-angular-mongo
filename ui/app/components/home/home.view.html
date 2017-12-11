@@ -1,0 +1,54 @@
+﻿<h1>Hi {{vm.user.firstName}}!</h1>
+<p>You're logged in!!</p>
+<h3>All projects categories:</h3>
+<ul>
+    <li ng-repeat="user in vm.allUsers">
+        {{user.name}} ({{user.description}} )
+        <!-- - <a ng-click="vm.getallProjects(user.id)">View All Projects</a> -->
+    </li>
+</ul>
+<p>&nbsp;</p>
+<h3>All projects :</h3>
+<h4>(click on project to get users list)</h4>
+<ul>
+    <li ng-repeat="project in vm.Projects" ng-click="vm.calldata(project.key)">
+        <a href="javascript:void(0);"> {{project.name}} ({{project.projectCategory.name}}/{{project.key}} )</a>
+    </li>
+</ul>
+<div>
+    {{ vm.AllBoards}}
+</div>
+<h3>All users:</h3>
+<table class="table">
+    <tr>
+        <th>Users</th>
+        <th>issues</th>
+    </tr>
+    <tr>
+        <td>
+            <ol>
+                <li ng-repeat="user in vm.AllUsersByProject">
+                    <img src="{{user.avatarUrls['48x48']}}" alt="{{user.name}}" width="48" height="48" /> : {{user.name}} ({{user.emailAddress}} ) -{{user.displayName}}
+                    <br /> accountId: {{user.accountId}}
+                    <br /> self Url: {{user.self}}
+                </li>
+            </ol>
+        </td>
+        <td>
+            <ol>
+                <li ng-repeat="issue in  vm.AllIssuesByProject">
+                    {{issue.key}} ({{issue.id}})
+                    <br /> self Url: {{issue.self}}
+                    <br /> aggregateprogress: {{issue.fields.aggregateprogress}}
+                    <br /> aggregatetimeestimate: {{issue.fields.aggregatetimeestimate}}
+                    <br /> aggregatetimespent: {{issue.fields.aggregatetimespent}}
+                    <br /> progress: {{issue.fields.progress}}
+                    <br /> timeestimate: {{issue.fields.timeestimate}}
+                    <br /> timespent: {{issue.fields.timespent}}
+                </li>
+            </ol>
+        </td>
+    </tr>
+</table>
+
+<!-- <p><a href="/login" class="btn btn-primary">Logout</a></p> -->

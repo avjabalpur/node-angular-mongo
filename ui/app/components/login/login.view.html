@@ -1,0 +1,60 @@
+<div class="login-wrapper">
+    <div class="text-center">
+        <h2 class="fadeInUp animation-delay8" style="font-weight:bold">
+            <span class="text-success">Jira</span>
+            <span style="color:#ccc; text-shadow:0 1px #fff">Admin</span>
+        </h2>
+    </div>
+    <div class="login-widget animation-delay1">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <div class="pull-left">
+                    <i class="fa fa-lock fa-lg"></i> Login
+                </div>
+            </div>
+            <div class="panel-body">
+                <form class="form-login" ng-submit="$auth.login()">
+                    <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+                        <label>Username</label>
+                        <input type="text" placeholder="Enter email" class="form-control input-sm bounceIn animation-delay2" ng-model="$auth.username"
+                            required>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                        <label>Password</label>
+                        <input type="password" placeholder="Enter password" class="form-control input-sm bounceIn animation-delay4" ng-model="$auth.password"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="rememberMe" id="rememberMe" ng-model="$auth.rememberMe" data-ng-click="rememberMe()">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Remember Me</span>
+                        </label>
+                    </div>
+                    <div class="seperator"></div>
+
+                    <div class="form-actions">
+                        <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Login</button>
+                        <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                        />
+                        <a href="/register" class="btn btn-link">Register</a>
+                    </div>
+                </form>
+                <div class="seperator"></div>
+                <div class="panel-body">
+                    <div class="form-actions">
+                        <a href="/api/v1/auth/facebook" target="_self" class="btn loginBtn loginBtn--facebook">
+                            Login with Facebook
+                        </a>
+                        <a href="/api/v1/auth/google" target="_self" class="btn loginBtn loginBtn--google">
+                            Login with Google
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /panel -->
+    </div>
+    <!-- /login-widget -->
+</div>

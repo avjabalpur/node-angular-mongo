@@ -1,0 +1,23 @@
+<div class="col-md-10 col-md-offset-1">
+    <h2>Register JIRA account</h2>
+    <form name="form" ng-submit="$jira.Connect()" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.JiraURL.$dirty && form.JiraURL.$error.required }">
+            <label for="username">Jira URL</label>
+            <input type="text" name="JiraURL" id="JiraURL" class="form-control" ng-model="$jira.jira.JiraURL" required />
+            <span ng-show="form.JiraURL.$dirty && form.JiraURL.$error.required" class="help-block">First name is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.consumerkey.$dirty && form.consumerkey.$error.required }">
+            <label for="username">Consumer Key</label>
+            <input type="text" name="consumerkey" id="consumerkey" class="form-control" ng-model="$jira.jira.consumerkey" required />
+            <span ng-show="form.consumerkey.$dirty && form.consumerkey.$error.required" class="help-block">Last name is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <label for="email">Please paste Private Key</label>
+            <textarea name="privatekey" id="privatekey" cols="30" rows="10" class="form-control" ng-model="$jira.jira.privatekey" required
+            />
+            <span ng-show="form.privatekey.$dirty && form.privatekey.$error.required" class="help-block">Username is required</span>
+        </div>
+        <div class="form-group">
+            <input type="submit" name="jiraConnect" value="Connect to JIRA" class="btn btn-primary" />
+        </div>
+</div>

@@ -1,0 +1,11 @@
+<div>
+    success!!
+    <div>
+        <input type="button" value="Get My Self" ng-click="vm.getMyself()"> 
+        
+        <input type="button" value="Get All Projects" ng-click="vm.getAllProjects()">
+    </div>
+    <br /> {{vm.text}} 
+</div>
+<json-tree object="vm.text" start-expanded="true"></json-tree>
+<link rel="stylesheet" href="https://rawgit.com/awendland/angular-json-tree/master/dist/angular-json-tree.css" />

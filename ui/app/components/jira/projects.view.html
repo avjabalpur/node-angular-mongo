@@ -1,0 +1,129 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <ul class="nav nav-pills nav-stacked" ng-init="$jira.getProjects()">
+                <li ng-class="{ active: isSet(1) }">
+                    <a href ng-click="setTab(1); $jira.getProjects();">Projects</a>
+                </li>
+                <li ng-class="{ active: isSet(2) }">
+                    <a href ng-click="setTab(2);$jira.loadJiraUsers();">Users</a>
+                </li>
+                <li ng-class="{ active: isSet(3) }">
+                    <a href ng-click="setTab(3);$jira.getIssues();">Issues</a>
+                </li>
+                <li ng-class="{ active: isSet(4) }">
+                    <a href ng-click="setTab(4);$jira.getAllBoards();">Boards</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="">
+                <div ng-show="isSet(1)">
+                    <h1>Home page</h1>
+                    <p>Project list</p>
+                    <ol class="list-group" ng-if="$jira.allProjects.length > 0">
+                        <li start="1" class="list-group-item" ng-repeat="pro in $jira.allProjects" ng-click="setSelected(pro.key)" ng-class="pro.key == idSelectedproject ? 'list-group-item-success':''">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h4>{{pro.name}}</h4>
+                                    <p>{{pro.key}}</p>
+                                    <p>{{pro.self}}</p>
+                                </div>
+                                <div class="col-sm-3 text-right">
+                                    <h4>
+                                        <img src="{{pro.avatarUrls['16x16']}}" alt="{{pro.name}}" width="32px" height="32px" />
+                                    </h4>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                    <div ng-if="!($jira.allProjects.length >0)">
+                        <a ui-sref="app.jiraConnect">
+                            <span class="menu-icon">
+                                <i class="fa fa-desktop fa-lg"></i>
+                            </span>
+                            <span class="text">
+                                connect with jira
+                            </span>
+                            <span class="menu-hover"></span>
+                        </a>
+                    </div>
+                </div>
+                <div ng-show="isSet(2)">
+                    <h1>Profile page</h1>
+                    <p>Profile information</p>
+                    <ul class="list-group">
+                        <li start="1" class="list-group-item" ng-repeat="juser in $jira.jirausers">
+                            <img src="{{juser.avatarUrls['48x48']}}" alt="{{juser.name}}" width="48px" height="48px" /> Name :
+                            <b>{{juser.displayName}}</b>
+
+                        </li>
+                    </ul>
+
+                </div>
+                <div ng-show="isSet(3)">
+                    <h1>Issues</h1>
+                    <p> Max Result: {{$jira.allIssues.maxResults}} Start at: {{$jira.allIssues.startAt}} total Record : {{$jira.allIssues.total}}
+
+                        <ul class="list-group">
+                            <li start="1" class="list-group-item" ng-repeat="issue in $jira.allIssues.issues | orderBy :'id'">
+                                KEY :
+                                <span>{{issue.key}}</span>
+                                <br /> ID :
+                                <span>{{issue.id}}</span>
+                                <br /> URL :
+                                <span>{{issue.self}}</span>
+
+                                <br /> desc :
+                                <span>{{issue.fields.description}}</span>
+                                <br /> Aggregate progress/total :
+                                <span>{{issue.fields.aggregateprogress.progress}}/{{issue.fields.aggregateprogress.total}}</span>
+                                <br /> Progress/total :
+                                <span>{{issue.fields.progress.progress}}/{{issue.fields.progress.total}}</span>
+                                <br />
+                                <b>
+                                    <a href="javascript:void(0)" ng-click="$jira.getissueDetail(issue.key);" style="color:red">Get current details</a>
+                                </b>
+                                <br /> comment :
+                                <span>total({{issue.details.comment.total}})</span>
+                                <ol>
+                                    <li ng-repeat="comment in issue.details.comment.comments">
+                                        author:{{comment.author.displayName}}
+                                        <br />emailAddress:{{comment.author.emailAddress}}
+                                        <br />comment:{{comment.body}}
+                                        <br />created:{{comment.created}}
+                                    </li>
+                                </ol>
+
+                                <br /> worklog :
+                                <span>total({{issue.details.worklog.total}})</span>
+                                <ol>
+                                    <li ng-repeat="worklog in issue.details.worklog.worklogs">
+                                        <b>{{worklog.author.displayName}}</b>
+                                        Created at :{{worklog.created}} timeSpentSeconds:{{worklog.timeSpentSeconds}}
+
+                                    </li>
+                                </ol>
+                            </li>
+                        </ul>
+                </div>
+                <div ng-show="isSet(4)">
+                    <h1>Issues</h1>
+                    <p> Max Result: {{$jira.allBoards.maxResults}} Start at: {{$jira.allBoards.startAt}} Is Last : {{$jira.allBoards.isLast}}
+                    </p>
+                    <ul class="list-group">
+                        <li start="1" class="list-group-item" ng-repeat="board in $jira.allBoards.values">
+                            name :
+                            <span>{{board.name}}</span>
+                            <br /> type :
+                            <span>{{board.type}}</span>
+                            <br />ID:
+                            <span>{{board.id}}</span>
+                            <br /> URL :
+                            <span>{{board.self}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

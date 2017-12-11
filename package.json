@@ -1,0 +1,66 @@
+{
+  "name": "jiraapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=0.10.28",
+    "npm": ">=1.4.28"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "amit",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "chalk": "^2.1.0",
+    "compression": "^1.7.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.0",
+    "consolidate": "^0.14.5",
+    "cookie-parser": "^1.4.3",
+    "crypto": "^1.0.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "file-stream-rotator": "^0.2.0",
+    "generate-password": "^1.3.0",
+    "glob": "^7.1.2",
+    "helmet": "^3.9.0",
+    "jira-connector": "^2.6.0",
+    "livereload-js": "^2.2.2",
+    "lodash": "^4.17.4",
+    "method-override": "^2.3.10",
+    "mongoose": "~4.10.2",
+    "morgan": "^1.9.0",
+    "multer": "^1.3.0",
+    "node-trello": "^1.3.0",
+    "nodemailer": "^4.2.0",
+    "oauth": "^0.9.15",
+    "owasp-password-strength-test": "^1.3.0",
+    "passport": "^0.4.0",
+    "passport-atlassian-oauth": "0.0.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-jwt": "^3.0.0",
+    "passport-linkedin": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "serve-favicon": "^2.4.5",
+    "socket.io": "^2.0.3",
+    "swig": "^1.4.2",
+    "validator": "^9.0.0",
+    "youtrack-api": "^0.2.8",
+    "youtrack-rest-node-library": "^0.1.1"
+  },
+  "devDependencies": {
+    "mongoose-diff-history": "^1.1.2"
+  }
+}

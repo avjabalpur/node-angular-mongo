@@ -1,0 +1,48 @@
+<nav class="navbar">
+  <div class="container">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+          <a class="navbar-brand" href="#" style="color: #fff;font-size: 40px;font-family: cursive;">FCL</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+          
+          <ul class="nav navbar-nav navbar-right">
+              
+              <li class="Login-credential hidden-xs">
+                  <form class="form-inline" style="display: flex;" ng-submit="$header.login()">
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" ng-model="$header.user.email" required>
+                        <br>
+                        <label><input type="checkbox" name="remember"> Remember me</label>
+                      </div>
+                      <div class="form-group">
+                          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" ng-model="$header.user.password" required>
+                          <br>
+                          <label><a href="#">Forgot Password </a></label>
+                      </div>
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-default">Login</button>
+                          <br>
+                          <label></label>
+                      </div>
+                  </form>
+              </li>
+              <li class="visible-xs"><a href="" data-toggle="modal" data-target="#loginModal" class="btn login">Login</a>
+              </li>
+              <li><a href="" ng-click="$header.openComponentModal()" class="btn signup">Sign Up</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<div class="nav-menu">
+    <ul class="container">
+        <li><a href="#"><img src="assets/img/cricket.png">Cricket</a></li>
+        <li><a href="#"><img src="assets/img/football.png">Football</a></li>
+        <li><a href="#"><img src="assets/img/Basketball Filled-24.png">Basketball</a></li>
+        <li><a href="#"><img src="assets/img/Tennis Racquet-24.png">Tennis</a></li>
+        <li><a href="#"><img src="assets/img/Table-tennis.png">Table tennis</a></li>
+    </ul>
+</div>

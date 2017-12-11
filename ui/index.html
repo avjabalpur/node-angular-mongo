@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset='utf-8' />
+    <base href="/" />
+    <link rel="shortcut icon" href="content/app/img/brand/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Jira app</title>
+    <meta name="title" content="jira app" />
+    <meta name="robots" content="noindex" />
+    <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
+
+    <!-- Ionicons -->
+    <link rel="stylesheet" type="text/css" href="content/bower_components/components-font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="content/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" type="text/css" href="content/bower_components/angular-dialog-service/dist/dialogs.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/bower_components/components-font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/bower_components/angular-dialog-service/dist/dialogs.min.css" />
+    <link href="content/app/app-content/endless.min.css" rel="stylesheet" />
+    <link href="content/app/app-content/endless-skin.css" rel="stylesheet" />
+    <link href="content/app/app-content/app.css" rel="stylesheet" />
+    <link href="content/app/app-content/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div ui-view></div>
+    <!--lodader-->
+    <div style="display: none" class="loadingBg" id="loader">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    window.__api_endpoint = window.localStorage.__api_endpoint = 'http://localhost';
+    window._api_port = window.localStorage._api_port = '5000';
+    window.__api_root = window.localStorage.__api_root = window.__api_endpoint + ':' + window._api_port + '/api/v1/';
+</script>
+<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+
+<script type="text/javascript" src="content/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- <script src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script> -->
+
+<script type="text/javascript" src="content/bower_components/angular/angular.js"></script>
+ 
+<script type="text/javascript" src="content/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="content/bower_components/angular-cookies/angular-cookies.js"></script>
+<script type="text/javascript" src="content/bower_components/angular-resource/angular-resource.js"></script>
+<script type="text/javascript" src="content/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="content/bower_components/angular-ui-router/release/stateEvents.js"></script>
+<script type="text/javascript" src="content/bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script type="text/javascript" src="content/bower_components/angular-translate/angular-translate.js"></script>
+<script type="text/javascript" src="content/bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+
+
+<script type="text/javascript" src="content/bower_components/moment/moment.js"></script>
+<script type="text/javascript" src="content/bower_components/lodash/lodash.js"></script>
+<script type="text/javascript" src="content/bower_components/angular-dialog-service/dist/dialogs.min.js"></script>
+<script type="text/javascript" src="content/bower_components/angular-dialog-service/dist/dialogs-default-translations.min.js"></script>
+<script type="text/javascript" src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.3.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js'></script>
+<script src="content/bower_components/angular-dialog-service/dist/dialogs.js" type="text/javascript"></script>
+<script src="content/bower_components/angular-dialog-service/dist/dialogs-default-translations.js" type="text/javascript"></script>
+
+ 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/oclazyload/1.1.0/ocLazyLoad.js"></script>
+<script type="text/javascript" src="content/app/app.js"></script>
+<script type="text/javascript" src="content/app/common/app.route.js"></script>
+<script type="text/javascript" src="content/app/common/storage-utils.js"></script>
+<script type="text/javascript" src="content/app/common/util.js"></script>
+<script type="text/javascript" src="content/app/common/utils.js"></script>
+
+<script type="text/javascript" src="content/app/common/app.api.routes.js"></script>
+<script type="text/javascript" src="content/app/common/app.lazy.config.js"></script>
+<script type="text/javascript" src="content/app/common/resourceMapper.js"></script>
+<script type="text/javascript" src="content/app/components/login/LoadingCtrl.js"></script>
+<script type="text/javascript" src="content/app/components/jira/jira.callback.controller.js"></script>
+<script type="text/javascript" src="content/app/app-services/jiraService.js"></script> 
+<script type="text/javascript" src="content/app/components/login/externalLoginCallback.js"></script>
+
+
+
+</html>
