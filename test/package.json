@@ -15,7 +15,7 @@
     "express-htaccess-middleware": "^0.1.0",
     "method-override": "~2.1.2",
     "mongoose": "~3.6.2",
-    "morgan": "~1.2.2",
+    "morgan": "~1.9.1",
     "phantomjs": "^2.1.7"
   }
 }
